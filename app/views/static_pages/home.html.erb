@@ -1,11 +1,6 @@
-<% provide(:title, t("static_pages.home.title")) %>
-<h1><%= t("static_pages.home.title") %></h1>
-<p>
-  The <a href=<%= t("static_pages.link.home") %>><em>Ruby on Rails
-  Tutorial</em></a> is a
-  <a href=<%= t("static_pages.link.book") %>>book</a> and
-  <a href=<%= t("static_pages.link.screencast") %>>screencast series</a>
-  to teach web development with
-  <a href=<%= t("static_pages.link.rubyonrails") %>>Ruby on Rails</a>.
-  This is the sample application for the tutorial.
-</p>
+<div class="center jumbotron">
+  <h1><%= t "application.welcome"  %></h1>
+  <h2><%= t("static_pages.home.des", link_home: link_to(t("static_pages.p.ror"), t("static_pages.link.home"))).html_safe %></h2>
+  <%= link_to t("static_pages.p.signup"), signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+<%= link_to image_tag("rails.png", alt: t("static_pages.image_alt.rails")), t("static_pages.link.rubyonrails") %>
