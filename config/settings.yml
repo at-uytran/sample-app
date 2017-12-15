@@ -1,0 +1,4 @@
+model:
+  email_max_len: 255
+  pswd_min_len: 5
+  name_max_len: 50

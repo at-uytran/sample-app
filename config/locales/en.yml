@@ -69,3 +69,5 @@ en:
       p: "Login"
     news:
       p: "News"
+    user:
+      title: "Users"
