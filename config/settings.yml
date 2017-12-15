@@ -1,4 +1,7 @@
 model:
   email_max_len: 255
-  pswd_min_len: 5
+  pwd_min_len: 6
   name_max_len: 50
+gravatar:
+  user:
+    size: 80

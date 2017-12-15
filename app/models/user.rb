@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   EMAIL_MAX_LEN = Settings.model.email_max_len.to_i
-  PWD_MIN_LEN = Settings.model.pwd_max_len.to_i
+  PWD_MIN_LEN = Settings.model.pwd_min_len.to_i
   NAME_MAX_LEN = Settings.model.name_max_len.to_i
   has_secure_password
   validates :email, presence: true, length: {maximum: EMAIL_MAX_LEN},
