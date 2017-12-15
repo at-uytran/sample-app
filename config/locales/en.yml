@@ -33,10 +33,16 @@ en:
   hello: Hello world
   application:
     title: "Ruby on Rails Tutorial Sample App"
+    welcome: "Welcome to the Sample App"
   static_pages:
+    image_alt:
+      rails: "Rails logo"
+    footer:
+      des: The %{link_home} by %{link_author}.
     link:
       home: "http://www.railstutorial.org"
       book: "http://www.railstutorial.org/book"
+      michael_hart: "http://www.michaelhartl.com/"
       about:
       rubyonrails: "http://rubyonrails.org/"
       screencasts: "http://screencasts.railstutorial.org/"
@@ -44,15 +50,22 @@ en:
                   and %{link_screencasts} to teach web development with %{link_book}.
                   This is the sample application for the tutorial.
     p:
+      signup: "Sign up now!"
       book: "book"
       ror: "Ruby on Rails"
       rort: "Ruby on Rails Tutorial"
       screencasts: "screencasts series"
+      author: "Michael Hart"
     home:
       title: "Sample App"
+      des: This is the home page for the %{link_home} sample application.
     help:
       title: "Help"
     contact:
       title: "Contact"
     about:
       title: "About"
+    login:
+      p: "Login"
+    news:
+      p: "News"
