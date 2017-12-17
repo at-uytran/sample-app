@@ -69,5 +69,13 @@ en:
       p: "Login"
     news:
       p: "News"
+    shared:
+      error: The form contains %{error_count}.
     user:
       title: "Users"
+      error:
+        not_found: "Could not found user."
+      new:
+        title: "Sign up"
+        btn_submit: "Create my account"
+        lb_confirm: "Confirmation"
