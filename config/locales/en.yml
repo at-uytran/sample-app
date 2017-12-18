@@ -47,9 +47,10 @@ en:
       rubyonrails: "http://rubyonrails.org/"
       screencasts: "http://screencasts.railstutorial.org/"
     description: The %{link_home} is a
-                  and %{link_screencasts} to teach web development with %{link_book}.
+                  and %{link_screencasts} to teach web development
+                  with %{link_book}.
                   This is the sample application for the tutorial.
-    p:
+    paragraph:
       signup: "Sign up now!"
       book: "book"
       ror: "Ruby on Rails"
@@ -66,12 +67,22 @@ en:
     about:
       title: "About"
     login:
-      p: "Login"
+      paragraph: "Log in"
+      paragraph_newuser: New user? %{link_sign_up}.
+      paragraph_invalid: "Invalid email/password combination"
+    logout:
+      paragraph: "Log out"
+    signup:
+      title: "Sign up"
+      paragraph: "Sign up now!"
     news:
-      p: "News"
+      paragraph: "News"
     shared:
       error: The form contains %{error_count}.
     user:
+      profile: "Profile"
+      set: "Settings"
+      acc: "Account"
       title: "Users"
       error:
         not_found: "Could not found user."

@@ -1,8 +1,11 @@
 <% provide :title, t("static_pages.contact.title") %>
 <h1><%= t "static_pages.contact.title" %></h1>
 <p>
-  <%= t("static_pages.description", link_home: link_to(t("static_pages.p.rort"), t("static_pages.link.home")),
-  link_screencasts: link_to(t("static_pages.p.screencasts"), t("static_pages.link.screencasts")),
-  link_book: link_to(t("static_pages.p.book"),t("static_pages.link.book"))).html_safe %>
+  <%= t("static_pages.description",
+    link_home: link_to(t("static_pages.paragraph.rort"),
+    t("static_pages.link.home")),
+    link_screencasts: link_to(t("static_pages.paragraph.screencasts"),
+    t("static_pages.link.screencasts")),
+    link_book: link_to(t("static_pages.paragraph.book"),
+    t("static_pages.link.book"))).html_safe %>
 </p>
-
