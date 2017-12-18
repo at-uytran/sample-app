@@ -10,4 +10,12 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: PWD_MIN_LEN}
   validates :name, presence: true, length: {maximum: NAME_MAX_LEN}
   before_save{self.email = email.downcase}
+
+  class << self
+    def digest string
+      cost = BCrypt::Engine.cost
+      cost = BCrypt::Engine::MIN_COST if ActiveModel::SecurePassword.min_cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+  end
 end
