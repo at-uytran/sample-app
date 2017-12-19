@@ -5,3 +5,6 @@ model:
 gravatar:
   user:
     size: 80
+sessions:
+  checked_remember: 1
+  uncheck_remember: 0
