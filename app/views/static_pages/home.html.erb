@@ -1,6 +1,10 @@
 <div class="center jumbotron">
-  <h1><%= t "application.welcome"  %></h1>
-  <h2><%= t("static_pages.home.des", link_home: link_to(t("static_pages.p.ror"), t("static_pages.link.home"))).html_safe %></h2>
-  <%= link_to t("static_pages.p.signup"), signup_path, class: "btn btn-lg btn-primary" %>
+  <h1><%= t "application.welcome" %></h1>
+  <h2><%= t("static_pages.home.des",
+    link_home: link_to(t("static_pages.paragraph.ror"),
+    t("static_pages.link.home"))).html_safe %></h2>
+  <%= link_to t("static_pages.paragraph.signup"), signup_path,
+    class: "btn btn-lg btn-primary" %>
 </div>
-<%= link_to image_tag("rails.png", alt: t("static_pages.image_alt.rails")), t("static_pages.link.rubyonrails") %>
+<%= link_to image_tag("rails.png", alt: t("static_pages.image_alt.rails")),
+  t("static_pages.link.rubyonrails") %>
