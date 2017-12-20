@@ -1,15 +1,16 @@
 class SessionsController < ApplicationController
   CHECKED_REMEMBER = Settings.sessions.checked_remember.to_s
   before_action :set_user, only: :create
+
   def new; end
 
   def create
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
       params[:session][:remember_me] == CHECKED_REMEMBER ? remember(@user) : forget(@user)
-      redirect_to @user
+      redirect_back_or @user
     else
-      flash.now[:danger] = t "static_pages.login.paragraph_invalid"
+      flash.now[:danger] = t ".paragraph_invalid"
       render :new
     end
   end

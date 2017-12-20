@@ -31,19 +31,17 @@
 
 en:
   hello: Hello world
+  title: "Sample App"
   application:
     title: "Ruby on Rails Tutorial Sample App"
     welcome: "Welcome to the Sample App"
   static_pages:
     image_alt:
       rails: "Rails logo"
-    footer:
-      des: The %{link_home} by %{link_author}.
     link:
       home: "http://www.railstutorial.org"
       book: "http://www.railstutorial.org/book"
       michael_hart: "http://www.michaelhartl.com/"
-      about:
       rubyonrails: "http://rubyonrails.org/"
       screencasts: "http://screencasts.railstutorial.org/"
     description: The %{link_home} is a
@@ -66,28 +64,51 @@ en:
       title: "Contact"
     about:
       title: "About"
-    login:
-      paragraph: "Log in"
-      paragraph_newuser: New user? %{link_sign_up}.
-      paragraph_invalid: "Invalid email/password combination"
-      remember_me: "Remember me on this computer"
-    logout:
-      paragraph: "Log out"
-    signup:
-      title: "Sign up"
-      paragraph: "Sign up now!"
     news:
       paragraph: "News"
     shared:
       error: The form contains %{error_count}.
-    user:
+  sessions:
+    destroy:
+      log_out: "Log out"
+    create:
+      paragraph_invalid: "Invalid email/password combination"
+    new:
+      sign_up_now: "Sign up now!"
+      paragraph: "Log in"
+      paragraph_newuser: New user? %{link_sign_up}.
+      remember_me: "Remember me on this computer"
+  layouts:
+    header:
+      home: "Home"
+      help: "Help"
       profile: "Profile"
       set: "Settings"
       acc: "Account"
-      title: "Users"
-      error:
-        not_found: "Could not found user."
-      new:
-        title: "Sign up"
-        btn_submit: "Create my account"
-        lb_confirm: "Confirmation"
+      users: "Users"
+    footer:
+      des: The %{link_home} by %{link_author}.
+  users:
+    form:
+      lb_confirm: "Confirmation"
+    show:
+      not_found: "Could not found user."
+    destroy:
+      success: "Deleted user!"
+      fail: "Could not delete!"
+    index:
+      title: "All users"
+      delete: "delete"
+      confirm_delete: "Are you sure?"
+    new:
+      title: "Sign up"
+      btn_submit: "Create my account"
+    update:
+      success: "Profile updated"
+    edit:
+      title: "Edit user"
+      h1: "Update your profile"
+      btn_save: "Save changes"
+      require_login: "Please log in."
+  gravatar:
+    change: "change"
