@@ -70,6 +70,7 @@ en:
       paragraph: "Log in"
       paragraph_newuser: New user? %{link_sign_up}.
       paragraph_invalid: "Invalid email/password combination"
+      remember_me: "Remember me on this computer"
     logout:
       paragraph: "Log out"
     signup:

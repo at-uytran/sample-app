@@ -1,6 +1,7 @@
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 ENV["RAILS_ENV"] ||= "test"
+CHECKED_REMEMBER = Settings.sessions.checked_remember.to_s
 
 module ActiveSupport
   class TestCase
@@ -9,6 +10,20 @@ module ActiveSupport
 
     def is_logged_in?
       !session[:user_id].nil?
+    end
+
+    def log_in_as user
+      session[:user_id] = user.id
+    end
+  end
+end
+
+module ActionDispatch
+  class IntegrationTest
+    def log_in_as user, password: "password", remember_me: CHECKED_REMEMBER
+      post login_path, params: {session: {email: user.email,
+                                          password: password,
+                                          remember_me: remember_me}}
     end
   end
 end
