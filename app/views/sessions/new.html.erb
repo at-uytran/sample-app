@@ -1,5 +1,5 @@
-<%= provide :title, t("static_pages.login.paragraph") %>
-<h1><%= t "static_pages.login.paragraph" %></h1>
+<%= provide :title, t(".paragraph") %>
+<h1><%= t ".paragraph" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for :session, url: login_path do |f| %>
@@ -11,14 +11,14 @@
 
       <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
-        <span><%= t "static_pages.login.remember_me" %></span>
+        <span><%= t ".remember_me" %></span>
       <% end %>
 
-      <%= f.submit t("static_pages.login.paragraph"), class: "btn btn-primary" %>
+      <%= f.submit t(".paragraph"), class: "btn btn-primary" %>
     <% end %>
 
-    <p><%= t("static_pages.login.paragraph_newuser",
-      link_sign_up: link_to(t("static_pages.signup.paragraph"),
+    <p><%= t(".paragraph_newuser",
+      link_sign_up: link_to(t(".sign_up_now"),
       signup_path)).html_safe %></p>
     </p>
   </div>
