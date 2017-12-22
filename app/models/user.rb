@@ -3,18 +3,23 @@ class User < ApplicationRecord
   EMAIL_MAX_LEN = Settings.model.email_max_len.to_i
   PWD_MIN_LEN = Settings.model.pwd_min_len.to_i
   NAME_MAX_LEN = Settings.model.name_max_len.to_i
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
   has_secure_password
   validates :email, presence: true, length: {maximum: EMAIL_MAX_LEN},
                     format: {with: VALID_EMAIL_REGEX},
                     uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: PWD_MIN_LEN}, allow_nil: true
   validates :name, presence: true, length: {maximum: NAME_MAX_LEN}
-  before_save{self.email = email.downcase}
+  before_save :downcase_email
+  before_create :create_activation_digest
 
-  def authenticated? remember_token
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  # scope
+  scope :activated, ->{where(activated: true)}
+
+  def authenticated? attribute, token
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def remember
@@ -26,6 +31,15 @@ class User < ApplicationRecord
     update_attributes(remember_digest: nil)
   end
 
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  # class method
   class << self
     def digest string
       cost = BCrypt::Engine.cost
@@ -36,5 +50,16 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest activation_token
   end
 end

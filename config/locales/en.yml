@@ -72,6 +72,8 @@ en:
     destroy:
       log_out: "Log out"
     create:
+      check_mail_message: "Acccount not activated.
+                          Check your email for the activation link!"
       paragraph_invalid: "Invalid email/password combination"
     new:
       sign_up_now: "Sign up now!"
@@ -89,6 +91,8 @@ en:
     footer:
       des: The %{link_home} by %{link_author}.
   users:
+    create:
+      check_mail: "Please check your email to activate your account."
     form:
       lb_confirm: "Confirmation"
     show:
@@ -112,3 +116,12 @@ en:
       require_login: "Please log in."
   gravatar:
     change: "change"
+  user_mailer:
+    account_activation:
+      activate: "Activate"
+      welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+      hi: Hi %{user_name},
+  account_activation:
+    edit:
+      activated: "Account activated!"
+      invalid_link: "Invalid activation link"
