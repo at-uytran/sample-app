@@ -2,9 +2,13 @@ model:
   email_max_len: 255
   pwd_min_len: 6
   name_max_len: 50
+  content_max_len: 140
+  picture_size: 1
 gravatar:
   user:
     size: 80
+  micropost:
+    size: 50
 sessions:
   checked_remember: 1
   uncheck_remember: 0
