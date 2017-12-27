@@ -81,6 +81,9 @@ en:
       paragraph_newuser: New user? %{link_sign_up}.
       remember_me: "Remember me on this computer"
   shared:
+    stats:
+      following: "following"
+      followers: "followers"
     error_messages:
       des: The form contains %{error_count}.
     micropost_form:
@@ -99,6 +102,17 @@ en:
     footer:
       des: The %{link_home} by %{link_author}.
   users:
+    following:
+      title: "Following"
+    followers:
+      title: "Followers"
+    show_follow:
+      link_profile: "view my profile"
+      total_micropost: "Microposts: "
+    follow:
+      btn_follow: "Follow"
+    unfollow:
+      btn_unfollow: "Unfollow"
     create:
       check_mail: "Please check your email to activate your account."
     form:
