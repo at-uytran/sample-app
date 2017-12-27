@@ -5,6 +5,7 @@ class User < ApplicationRecord
   NAME_MAX_LEN = Settings.model.name_max_len.to_i
   attr_accessor :remember_token, :activation_token, :reset_token
   has_secure_password
+  has_many :microposts, dependent: :destroy
   validates :email, presence: true, length: {maximum: EMAIL_MAX_LEN},
                     format: {with: VALID_EMAIL_REGEX},
                     uniqueness: {case_sensitive: false}
@@ -50,6 +51,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def feed
+    microposts.created_desc
   end
 
   # class method

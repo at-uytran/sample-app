@@ -56,6 +56,7 @@ en:
       screencasts: "screencasts series"
       author: "Michael Hart"
     home:
+      feed_items: "Microposts feed items"
       title: "Sample App"
       des: This is the home page for the %{link_home} sample application.
     help:
@@ -66,8 +67,6 @@ en:
       title: "About"
     news:
       paragraph: "News"
-    shared:
-      error: The form contains %{error_count}.
   sessions:
     destroy:
       log_out: "Log out"
@@ -81,6 +80,14 @@ en:
       paragraph: "Log in"
       paragraph_newuser: New user? %{link_sign_up}.
       remember_me: "Remember me on this computer"
+  shared:
+    error_messages:
+      des: The form contains %{error_count}.
+    micropost_form:
+      compose_new: "Compose new micropost..."
+      btn_submit: "Post"
+    user_info:
+      view_profile: "view my profile"
   layouts:
     header:
       home: "Home"
@@ -98,6 +105,7 @@ en:
       lb_confirm: "Confirmation"
     show:
       not_found: "Could not found user."
+      microposts_count: "Microposts (%{count})"
     destroy:
       success: "Deleted user!"
       fail: "Could not delete!"
@@ -152,3 +160,17 @@ en:
       user_not_found: "Could not found user"
       success: "Password has been update!"
       cant_empty: "can't be empty!"
+  microposts:
+    micropost:
+      posted_time: Posted %{time_ago} ago.
+      confirm: "Are you sure?"
+      delete: "delete"
+    create:
+      success: "Successful create micropost!"
+      fail: "Could not create micropost"
+    destroy:
+      success: "Micropost deleted"
+      fail: "Could not delete micropost"
+  model:
+    micropost:
+      picture_size: "should be less than 1MB"
