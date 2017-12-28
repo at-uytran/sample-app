@@ -9,6 +9,7 @@ gravatar:
     size: 80
   micropost:
     size: 50
+  avatar_follow_form: 30
 sessions:
   checked_remember: 1
   uncheck_remember: 0
